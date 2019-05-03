@@ -25,7 +25,7 @@ class DialectController extends Controller
             if (null === $keyword) {
                 $items = $this->service->getAllByPage($zone, $type, $perPage);
             } else {
-                $items = $this->service->getDialectsByPage($keyword, $zone, $type, $perPage);
+                $items = $this->service->getDialectsByPage($zone, $type, $keyword, $perPage);
             }
         } else {
             $items   = null;

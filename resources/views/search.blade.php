@@ -92,14 +92,14 @@
                         <div class="py-1">
                             <small class="text-muted">共检索到 {{ $items->total() }} 条符合条件的条目</small>
                         </div>
-                        <table class="table table-stripped">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>编号</th>
-                                    <th>方言点</th>
-                                    <th>类型</th>
-                                    <th>关键词</th>
-                                    <th>有声语料</th>
+                                    <th style="white-space: no-wrap">编号</th>
+                                    <th style="white-space: no-wrap">方言点</th>
+                                    <th style="white-space: no-wrap">类型</th>
+                                    <th style="white-space: no-wrap">关键词</th>
+                                    <th style="white-space: no-wrap">有声语料</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -109,7 +109,17 @@
                                         <td>{{ $item->zone }}</td>
                                         <td>{{ $item->type }}</td>
                                         <td>{{ $item->keyword }}</td>
-                                        <td>{{ $item->path }}</td>
+                                        <td>
+                                            <audio controls="controls">
+                                                <source src="{{ asset('storage/' . $item->path) }}">
+                                                <object type="audio/x-wav" data="{{ asset('storage/' . $item->path) }}" width="290" height="45">
+                                                    <param name="src" value="{{ asset('storage/' . $item->path) }}">
+                                                    <param name="autoplay" value="false">
+                                                    <param name="autoStart" value="0">
+                                                    <p><a href="{{ asset('storage/' . $item->path) }}">下载音频文件</a></p>
+                                                </object>
+                                            </audio>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

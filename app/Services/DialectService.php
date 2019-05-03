@@ -37,7 +37,7 @@ class DialectService
         if ('all' !== $type) {
             $dialects = $dialects->whereType($type);
         }
-        $dialects = $dialects->whereKeyword($keyword);
+        $dialects = $dialects->where('keyword', 'like', '%' . $keyword . '%');
 
         return $dialects->paginate($limit);
     }
