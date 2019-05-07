@@ -81,7 +81,7 @@
                                     查询关键字为有声语料例字。
                                 </li>
                                 <li>
-                                    查询系统为模糊查询，只要例子中包含查询关键字都能在结果中显示出来。若不输入关键字，则默认为对应方言点和类型的全部有声语料查询。
+                                    查询系统为模糊查询，只要例字中包含查询关键字都能在结果中显示出来。若不输入关键字，则默认为对应方言点和类型的全部有声语料查询。
                                 </li>
                                 <li>
                                     查询结果为列表形式，可在线播放有声语料。
@@ -122,7 +122,11 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="5">{{ $items->appends($_GET)->links() }}</td>
+                                    <td colspan="5">
+                                        <div class="row justify-content-center">
+                                            {{ $items->appends($_GET)->links() }}
+                                        </div>
+                                    </td>
                                 </tr>
                             </tfoot>
                         </table>

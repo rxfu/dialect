@@ -9,10 +9,11 @@ body {
 
 .logo h1 {
   font-size: 3.5em;
+  font-weight: bold;
   line-height: 4em;
   -webkit-text-stroke: 1px #f2ecd6;
   /* -webkit-text-fill-color: transparent; */
-  text-shadow: 4px 4px 4px #008844;
+  /*text-shadow: 4px 4px 4px #008844;*/
 }
 
 a.logo-title {
