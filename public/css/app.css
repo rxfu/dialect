@@ -1,3 +1,7 @@
+body {
+  font-family: "Microsoft YaHei";
+}
+
 .logo {
   background: url("../images/logo.png") no-repeat;
   background-size: cover;
@@ -8,7 +12,7 @@
   line-height: 4em;
   -webkit-text-stroke: 1px #f2ecd6;
   /* -webkit-text-fill-color: transparent; */
-  text-shadow: 4px 4px 4px #afa274;
+  text-shadow: 4px 4px 4px #008844;
 }
 
 a.logo-title {
@@ -17,7 +21,7 @@ a.logo-title {
 
 .intro {  
   text-align: justify;
-  border: 3px dotted #afa274;
+  border: 3px dotted #008844;
   border-radius: 25px;
   width: 100%;
 }

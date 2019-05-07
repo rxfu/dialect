@@ -15,7 +15,7 @@
         <div class="container-fluid px-0">
             <a href="{{ url('/') }}" class="logo-title">
                 <div class="logo">
-                    <h1 class="text-center text-dark">广西粤方言有声数据库查询系统</h1>
+                    <h1 class="text-center">广西粤方言有声数据库查询系统</h1>
                 </div>
             </a>
         </div>
@@ -75,16 +75,19 @@
 
                             <ol>
                                 <li>
-                                    本查詢系統只設有書名、作者兩個基本檢索點，提供了本館所藏古籍的書名、著者、著作方式、版本項、函數、卷/冊數、存卷/冊數、部/套數、四部分類號、附注以及索書號、財產號等基本資訊。
+                                    本查询系统仅提供方言点和类型检索，方言点共14个，类型共4种。
                                 </li>
                                 <li>
-                                    本系統依據原有卡片目錄繁體字著錄，讀者查詢時需使用繁體字檢索。
+                                    查询关键字为有声语料例字。
                                 </li>
                                 <li>
-                                    凡原卡片目錄中出現的異體字，一律統一於常見繁體字，如：“菴”用“庵”，“藳”用“稿”，“劄”用“札”，“攷”用“考”，“誌”用“志”……。
+                                    查询系统为模糊查询，只要例子中包含查询关键字都能在结果中显示出来。若不输入关键字，则默认为对应方言点和类型的全部有声语料查询。
                                 </li>
                                 <li>
-                                    本系統還可用于叢書書名、叢書子目（叢書子目書名、叢書子目著者）查詢。
+                                    查询结果为列表形式，可在线播放有声语料。
+                                </li>
+                                <li>
+                                    建议使用Google Chrome浏览器进行操作。
                                 </li>
                             </ol>
                         </blockquote>
@@ -110,14 +113,8 @@
                                         <td>{{ $item->type }}</td>
                                         <td>{{ $item->keyword }}</td>
                                         <td>
-                                            <audio controls="controls">
-                                                <source src="{{ asset('storage/' . $item->path) }}">
-                                                <object type="audio/x-wav" data="{{ asset('storage/' . $item->path) }}" width="290" height="45">
-                                                    <param name="src" value="{{ asset('storage/' . $item->path) }}">
-                                                    <param name="autoplay" value="false">
-                                                    <param name="autoStart" value="0">
-                                                    <p><a href="{{ asset('storage/' . $item->path) }}">下载音频文件</a></p>
-                                                </object>
+                                            <audio src="{{ asset('storage/' . $item->path) }}" type="audio/wav" preload controls>
+                                                你的浏览器不支持audio标签
                                             </audio>
                                         </td>
                                     </tr>
