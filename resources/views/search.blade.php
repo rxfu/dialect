@@ -9,7 +9,9 @@
         <title>广西粤方言有声数据库查询系统</title>
 
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/audioplayer.css') }}" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        </style>
     </head>
     <body>
         <div class="container-fluid px-0">
@@ -113,9 +115,9 @@
                                         <td>{{ $item->type }}</td>
                                         <td>{{ $item->keyword }}</td>
                                         <td>
-                                            <audio src="{{ asset('storage/' . $item->path) }}" type="audio/wav" preload controls>
-                                                你的浏览器不支持audio标签
-                                            </audio>
+											<audio preload="auto" controls>
+												<source src="{{ asset('storage/' . $item->path) }}" type="audio/wav" />
+											</audio>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -141,5 +143,11 @@
     </body>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('js/audioplayer.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+    	$(function() {
+    		$('audio').audioPlayer();
+    	})
+    </script>
 </html>
